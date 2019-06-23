@@ -7,24 +7,18 @@ app.use(express.static('public'));
 
 app.get("/",function(req: any,res: any){
     const data = {
-        items: [
-            {name: "<h1>f</h1>"},
-            {name: "<h2>バナナ</h2>"},
-            {name: "<h3>スイカ</h3>"}
-        ]
+        title: '【Holy Place Photo】アニメの聖地の写真の共有サイト',
+        description: 'アニメの聖地で撮った写真を共有できるサイトです。好きなアニメの聖地の写真を投稿したり、聖地を地図から探したりして楽しんでください。'
     };
     res.render("./index.ejs", data);
 });
 
-app.get("/hoge",function(req: any,res: any){
+app.get("/about",function(req: any,res: any){
     const data = {
-        items: [
-            {name: "<h1>hoge</h1>"},
-            {name: "<h2>hoge</h2>"},
-            {name: "<h3>hoge</h3>"}
-        ]
+        title: '【Holy Place Photo】サイトについて',
+        description: 'Holy Place Photoについての説明です。'
     };
-    res.render("./index.ejs", data);
+    res.render("./about.ejs", data);
 });
 
 exports.app = functions.https.onRequest(app);
